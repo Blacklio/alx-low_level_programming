@@ -1,5 +1,7 @@
 #include <stdio.h>
-/** main - point of entering  return 0 - always 0 (success) */
+/** main function - you can call other functions when the main returns the program stops
+*return 0 - always success
+*/
 int main(void)
 {
 	puts("\"Programming is like building a multilingual puzzle");
