@@ -8,8 +8,8 @@
  */
 int _strlen(char *s)
 {
-  int a;
-  
+	int a;
+
 	for (a = 0; s[a] != '\0'; a++)
 	{
 
@@ -26,7 +26,7 @@ char *_strdup(char *str)
 	char *ptr;
 	int size;
 	int x;
-	
+
 	if (str == NULL)
 	{
 		return (NULL);
