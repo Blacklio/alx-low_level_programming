@@ -10,7 +10,7 @@ int _strlen(char *s)
 {
 	int a;
 
-	for (a = 0; s[a] != '\0'; a++);
+	for (a = 0; s[a] != '\0'; a++)
 	return (a);
 }
 /**
@@ -30,14 +30,14 @@ char *_strncat(char *dest, char *src, int n)
 	return (dest);
 }
 /**
- * str_concat - function to allocate space for sting concatnation
- * @s1: array pointer to destination of string
- * @s2: array pointer to source of string
- * Return: return pointer to copy of string
- */
+* str_concat - function to allocate space for sting concatnation
+* @s1: array pointer to destination of string
+* @s2: array pointer to source of string
+* Return: return pointer to copy of string
+*/
 char *str_concat(char *s1, char *s2)
 {
-        char *ptr;
+	char *ptr;
 	int size1, size2;
 
 	if (s1 == NULL)
