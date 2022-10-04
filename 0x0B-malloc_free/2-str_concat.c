@@ -2,24 +2,24 @@
 #include <stdlib.h>
 #include <stdio.h>
 /**
- * _strlen - return length of a string
- * @s: char type
- * Return:  length of string
- */
-int _strlen(char *s)
+* _strlen - return length of a string
+* @s: char type
+* Return:  length of string
+*/
+int _strlen(char *s) 
 {
 	int a;
 
 	for (a = 0; s[a] != '\0'; a++);
 	return (a);
 }
- /**
-  * _strncat - function to concatnate strings with n bytes
-  *  @dest: destination for concatnation
-  *  @src: source of string
-  *  @n: int type for size of byte
-  *  Return: dest
-  */
+/**
+* _strncat - function to concatnate strings with n bytes
+*  @dest: destination for concatnation
+*  @src: source of string
+*  @n: int type for size of byte
+*  Return: dest
+*/
 char *_strncat(char *dest, char *src, int n)
 {
 	int dest_len, a;
@@ -37,7 +37,7 @@ char *_strncat(char *dest, char *src, int n)
  */
 char *str_concat(char *s1, char *s2)
 {
-	char *ptr;
+        char *ptr;
 	int size1, size2;
 
 	if (s1 == NULL)
@@ -50,6 +50,7 @@ char *str_concat(char *s1, char *s2)
 	}
 	size1 = _strlen(s1);
 	size2 = _strlen(s2);
+
 	ptr = malloc(((size1 + size2) + 1) * sizeof(char));
 	if (ptr == NULL)
 	{
