@@ -3,6 +3,7 @@
 #include <stdlib.h>
 /**
 * function main - print the numbers if positive, zero, or negative
+* main - Entry point
 * return 0: always (success)
 */
 int main(void)
