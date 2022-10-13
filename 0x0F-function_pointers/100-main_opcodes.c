@@ -4,7 +4,7 @@
  * print_opcodes - print the opcodes of this program
  * @a: address of the main function
  * @n: number of bytes to print
- * Return: void
+ * Return: 0
  */
 void print_opcodes(char *a, int n)
 {
@@ -33,7 +33,6 @@ int main(int argc, char **argv)
 		exit(1);
 	}
 	a = atoi(argv[1]);
-
 	if (a < 0)
 	{
 		printf("Error\n");
