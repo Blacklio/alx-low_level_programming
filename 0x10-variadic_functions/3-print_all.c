@@ -4,7 +4,7 @@
 /**
 * print_all - print char, integer, float and string.
 * @format: format.
-* Return: Nothing.
+* Return: Always 0.
 */
 void print_all(const char * const format, ...)
 {
