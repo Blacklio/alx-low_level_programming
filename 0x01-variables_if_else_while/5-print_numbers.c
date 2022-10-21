@@ -4,7 +4,7 @@
  *
  *Return: Always (Success)
  */
-int main(voiid)
+int main(void)
 {
 	char n;
 
