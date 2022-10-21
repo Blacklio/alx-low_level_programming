@@ -5,6 +5,7 @@
  * @c: tested char
  * Return: new string.
  */
+
 char *_strchr(char *s, char c)
 {
 	while (*s != '\0')

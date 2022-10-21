@@ -6,9 +6,11 @@
  * @size: size NxN of matrix
  * Return: chessboard.
  */
+
 void print_diagsums(int *a, int size)
 {
 	int i, j, sumdiag1 = 0, sumdiag2 = 0, step1, step2;
+
 	for (i = 0; i <= (size - 1); i++)
 	{
 		step1 =  (size + 1) * i;

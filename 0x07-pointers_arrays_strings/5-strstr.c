@@ -6,9 +6,11 @@
  * @needle: string to search for.
  * Return: return beginning of located substring or NULL.
  */
+
 char *_strstr(char *haystack, char *needle)
 {
 	unsigned int i, z, done;
+
 	i = 0;
 	z = 0;
 	done = 0;
