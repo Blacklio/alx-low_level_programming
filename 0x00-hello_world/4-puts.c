@@ -1,8 +1,8 @@
 #include <stdio.h>
 /**
- * main - point of entering 
- * 
- * Return: Always 0 (success) 
+ * main - point of entering
+ *
+ * Return: Always 0 (success)
 */
 int main(void)
 {
