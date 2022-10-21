@@ -14,7 +14,7 @@ int main(void)
 	j = 1;
 	for (count = 1; count <= 91; count++)
 	{
-	        k = i + j;
+		k = i + j;
 		i = j;
 		j = k;
 		printf("%lu, ", k);
@@ -24,7 +24,7 @@ int main(void)
 	n = j % 1000;
 	j = j / 1000;
 	while (count <= 98)
-        {
+	{
 		carry = (m + n) / 1000;
 		p = (m + n) - carry * 1000;
 		k = (i + j) + carry;
