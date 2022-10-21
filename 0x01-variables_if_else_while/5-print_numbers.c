@@ -1,10 +1,10 @@
 #include <stdio.h>
 /**
-  * main - Prints the numbers since 0 to 9
-  *
-  * Return: Always (Success)
-  */
-int main(void)
+ *main - prints the numbers from 0 to 9
+ *
+ *Return: Always (Success)
+ */
+int main(voiid)
 {
 	char n;
 
