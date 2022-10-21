@@ -1,7 +1,8 @@
 #include <stdio.h>
 /**
-* main - causes an infinite loop.
-* Return: Always 0 (Success)
+ * main - causes an infinite loop.
+ *
+ * Return: Always 0 (Success)
 */
 int main(void)
 {
