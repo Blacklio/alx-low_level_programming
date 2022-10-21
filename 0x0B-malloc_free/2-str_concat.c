@@ -6,13 +6,12 @@
 * @s: char type
 * Return:  length of string
 */
+
 int _strlen(char *s)
 {
 	int a;
 
-
 	for (a = 0; s[a] != '\0'; a++);
-
 	return (a);
 }
 /**
@@ -22,6 +21,7 @@ int _strlen(char *s)
 *  @n: int type for size of byte
 *  Return: dest
 */
+
 char *_strncat(char *dest, char *src, int n)
 {
 	int dest_len, a;
@@ -37,6 +37,7 @@ char *_strncat(char *dest, char *src, int n)
 * @s2: array pointer to source of string
 * Return: return pointer to copy of string
 */
+
 char *str_concat(char *s1, char *s2)
 {
 	char *ptr;
