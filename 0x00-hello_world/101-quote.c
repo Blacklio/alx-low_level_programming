@@ -1,11 +1,13 @@
 #include <stdio.h>
+#include <unistd.h>
 /**
- * main - point of entering
+ * main - Entry point
  *
- * Return 0 - always 0 (success)
-*/
+ * Return: Always 1 (Error)
+ */
 int main(void)
 {
-	fwrite(2, "and that piece of art is useful\" - Dora Korpar, 2015-10-19\n", sizeof("and that piece of art is useful\" - Dora Korpar, 2015-10-19"));
+	write(1, "and that piece of art is useful\" - Dora Korpar, 2015-10-19\n", 59);
+
 	return (1);
 }
