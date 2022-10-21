@@ -9,10 +9,12 @@
  * @argv: Array name
  * Return: 1 if a non-integer is among the passed in arguments, 0 otherwise
  */
+
 int main(int argc, char *argv[])
 {
 	int i, j, length, sum;
 	char *ptr;
+
 	if (argc < 2)
 		printf("0\n");
 	else
