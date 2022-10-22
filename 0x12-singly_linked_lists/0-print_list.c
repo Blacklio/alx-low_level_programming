@@ -5,7 +5,6 @@
  * @h: A node in list_t.
  * Return: The number of nodes.
  */
-
 size_t print_list(const list_t *h)
 {
 	size_t num_of_nodes = 0;
