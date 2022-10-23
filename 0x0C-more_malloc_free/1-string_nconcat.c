@@ -1,8 +1,9 @@
 #include "main.h"
 #include <stdlib.h>
 /**
- * _strlen - calculate and return string length
- * @string: string
+ * _strlen - calculate and return string length.
+ *
+ * @string: string.
  * Return: string length
  */
 
@@ -15,10 +16,11 @@ int _strlen(char *string)
 	return (i);
 }
 /**
- * string_nconcat - concatenate s1 and n bytes of s2; return ptr to string
- * @s1: string 1 account for NULL strings
- * @s2: string 2 account for negative n bytes
- * @n: n bytes to concat from string 2
+ * string_nconcat - concatenate s1 and n bytes of s2; return ptr to string.
+ * @s1: string 1 account for NULL strings.
+ * @s2: string 2 account for negative n bytes.
+ *
+ * @n: n bytes to concat from string 2.
  * Return: pointer to concatenated string
  */
 
@@ -36,6 +38,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		return (NULL);
 	if (num >= _strlen(s2))
 		num = _strlen(s2);
+
 	len = _strlen(s1) + num + 1;
 	ptr = malloc(sizeof(*ptr) * len);
 
