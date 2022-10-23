@@ -1,4 +1,4 @@
-Resources
+# Resources
 
 Read or watch:
 
@@ -30,13 +30,13 @@ man or help:
 
 ascii (You do not need to learn about scanf, getc, getchar, EOF, EXIT_SUCCESS, time, rand, srand, RAND_MAX, for loops, do...while loops, functions.)
 
-Learning Objectives
+# Learning Objectives
 
 At the end of this project, you are expected to be able to explain to anyone, without the help of Google:
 
 
 
-General
+# General
 
 What are the arithmetic operators and how to use them
 
@@ -78,9 +78,9 @@ You are not allowed to publish any content of this project.
 
 Any form of plagiarism is strictly forbidden and will result in removal from the program.
 
-Requirements
+# Requirements
 
-General
+# General
 
 Allowed editors: vi, vim, emacs
 
