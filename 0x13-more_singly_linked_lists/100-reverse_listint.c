@@ -7,75 +7,65 @@
  * Return: always successful
  */
 
-#include<stdio.h>
-#include<stdlib.h>
-
- /* Link list node */
-struct Node
-{
+struct Node {
     int data;
     struct Node* next;
 };
 
-/* Function to reverse the linked list */
-static void reverse(struct Node** head_ref)
+// newNode function inserts the new node at
+// the right side of linked list
+struct Node* newNode(int key)
 {
-    struct Node* prev = NULL;
-    struct Node* current = *head_ref;
-    struct Node* next;
-    while (current != NULL)
-    {
-        next = current->next;
-        current->next = prev;
-        prev = current;
-        current = next;
+    struct Node* temp = new Node;
+    temp->data = key;
+    temp->next = NULL;
+    return temp;
+}
+
+// reverse() will receive individual data item
+// from reverseIndividualData() and will return
+// the reversed number to calling function
+int reverse(int number)
+{
+    int new_num = 0, rem;
+
+    while (number != 0) {
+        rem = number % 10;
+        new_num = new_num * 10 + rem;
+        number = number / 10;
     }
-    *head_ref = prev;
+
+    return new_num;
 }
 
-/* Function to push a node */
-void push(struct Node** head_ref, int new_data)
+void reverseIndividualData(struct Node* node)
 {
-    /* allocate node */
-    struct Node* new_node =
-        (struct Node*)malloc(sizeof(struct Node));
 
-    /* put in the data  */
-    new_node->data = new_data;
+    if (node == NULL)
+        return;
 
-    /* link the old list off the new node */
-    new_node->next = (*head_ref);
+    while (node != NULL) {
 
-    /* move the head to point to the new node */
-    (*head_ref) = new_node;
-}
+        /*  function call to reverse(),
+            reverseIndividualData(struct Node *node)
+            will send the one data item at a time to
+            reverse(node->data) function which will
+            return updated value to node->data*/
 
-/* Function to print linked list */
-void printList(struct Node* head)
-{
-    struct Node* temp = head;
-    while (temp != NULL)
-    {
-        printf("%d ", temp->data);
-        temp = temp->next;
+        node->data = reverse(node->data);
+
+        /*  updating node pointer so as to get
+            next value */
+
+        node = node->next;
     }
 }
 
-/* Driver program to test above function*/
-int main()
+// Function to print nodes in linked list
+void printList(struct Node* node)
 {
-    /* Start with the empty list */
-    struct Node* head = NULL;
-
-    push(&head, 20);
-    push(&head, 4);
-    push(&head, 15);
-    push(&head, 85);
-
-    printf("Given linked list\n");
-    printList(head);
-    reverse(&head);
-    printf("\nReversed Linked list \n");
-    printList(head);
-    getchar();
+    while (node != NULL) {
+        printf("%d", node->data);
+        node = node->next;
+    }
 }
