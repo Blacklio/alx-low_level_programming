@@ -1,6 +1,5 @@
 #include "lists.h"
 #include <stdio.h>
-
 size_t looped_listint_len(const listint_t* head);
 size_t print_listint_safe(const listint_t* head);
 /**
@@ -38,6 +37,7 @@ size_t looped_listint_len(const listint_t* head)
 			}
 
 			tortoise = tortoise->next;
+
 			while (tortoise != hare)
 			{
 				nodes++;
@@ -51,7 +51,6 @@ size_t looped_listint_len(const listint_t* head)
 		hare = (hare->next)->next;
 
 	}
-
 	return (0);
 }
 /**
@@ -76,7 +75,6 @@ size_t print_listint_safe(const listint_t* head)
 
 		}
 	}
-
 	else
 	{
 		for (index = 0; index < nodes; index++)
@@ -87,6 +85,5 @@ size_t print_listint_safe(const listint_t* head)
 		}
 		printf("-> [%p] %d\n", (void*)head, head->n);
 	}
-
 	return (nodes);
 }
