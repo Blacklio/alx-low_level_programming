@@ -2,6 +2,7 @@
 /**
  * listint_len - Return the number of elements.
  * @h: data type pointer of struct.
+ *
  * Return: elements of the str i.
  */
 

@@ -1,10 +1,10 @@
 #include <stdlib.h>
 #include "lists.h"
 /**
-  * pop_listint - ...
-  * @head: ...
+  * pop_listint - Delete the first element of a singly linked list.
+  * @head: Pointer to a list.
   *
-  * Return: ...
+  * Return: Integer if success.
   */
 
 int pop_listint(listint_t **head)
