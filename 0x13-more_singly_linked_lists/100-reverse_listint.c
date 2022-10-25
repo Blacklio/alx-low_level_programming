@@ -1,4 +1,6 @@
 #include <stdlib.h>
+#include <string.h>
+#include <stdio.h>
 #include "lists.h"
 /**
  * *reverse_listint - function to reverse order of nodes
@@ -7,13 +9,25 @@
  * Return: always successful
  */
 
-struct listint_s 
+listint_t* reverse_listint(listint_t** head)
 {
-	int n;
-	struct listint_s* next;
+	listint_t* forward;
+	listint_t* back = NULL;
+
+	if (head == NULL)
+		return (NULL);
+	forward = *head;
+	while (forward != NULL)
+	{
+		forward = forward->next;
+
+		forward = (*head)->next;
+
+		(*head)->next = back;
+
+		back = *head;
+		*head = forward;
+	}
+	*head = back;
+	return (*head);
 }
-typedef struct listint_s listint_t;
-
-/* Function to reverse the linkedlist */
-
-void reverse(listint_t** head)
