@@ -9,36 +9,25 @@
  * Return: always successful
  */
 
-listint_t* reverse_listint(listint_t** head) 
+listint_t* reverse_listint(listint_t** head)
 {
-    listint_t* head = NULL;
+	listint_t* forward;
+	listint_t* back = NULL;
 
-    listint_t* next = NULL;
+	if (head == NULL)
+		return (NULL);
+	forward = *head;
+	while (forward != NULL)
+	{
+		forward = forward->next;
 
-    if (head == NULL || *head == NULL)
-    {
-        return NULL;
-    }
+		forward = (*head)->next;
 
-    if ((*head)->next == NULL)
+		(*head)->next = back;
 
-    {
-        return (*head);
-    }
-
-    listint_t* p = (*head);
-    *q = p->next;
-
-    *r = q->next;
-
-    while (r != NULL)
-    {
-        q->next = p;
-        p = q;
-        q = r;
-        r = r->next;
-    }
-
-    (*head)->next = NULL;
-    return q;
+		back = *head;
+		*head = forward;
+	}
+	*head = back;
+	return (*head);
 }
