@@ -55,7 +55,3 @@ void print_entry(unsigned long int e_entry, unsigned char *e_ident);
 void close_elf(int elf);
 
 #endif
-
-Footer
-
-© 2022 GitHub, In
