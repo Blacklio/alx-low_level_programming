@@ -1,71 +1,25 @@
-#include <stdlib.h>
-<<<<<<< HEAD
-
+#include "stdlib.h"
 #include "lists.h"
 
-
-
 /**
-
-  * sum_listint - ...
-
-  * @head: ...
-
-  *
-
-  * Return: ...
-
-  */
-
-int sum_listint(listint_t *head)
-
-{
-
-	int amount = 0;
-
-
-
-	if (head)
-
-	{
-
-		while (head)
-
-		{
-
-=======
-#include "lists.h"
-/**
-  * sum_listint - Sums up all of the data (n) in a list.
-  * @head: Address of the first node of the list.
-  *
-  * Return: Integer if success.
-  */
+ * sum_listint - returns the sum of all data (n) of a linked list
+ * @head: head of linked list
+ * Return: the sum of all data (n) of linked list
+ */
 
 int sum_listint(listint_t *head)
 {
-	int amount = 0;
+	int sum;
+	listint_t *temp;
 
-	if (head)
+	if (head == NULL)
+		return (0);
+	sum = 0;
+	temp = head;
+	while (temp != NULL)
 	{
-		while (head)
-		{
->>>>>>> 508a638612b6975cac7099369f6c8a3ff42b7f8f
-			amount += head->n;
-
-			head = head->next;
-
-		}
-<<<<<<< HEAD
-
+		sum += temp->n;
+		temp = temp->next;
 	}
-
-
-
-	return (amount);
-
-=======
-	}
-	return (amount);
->>>>>>> 508a638612b6975cac7099369f6c8a3ff42b7f8f
+	return (sum);
 }

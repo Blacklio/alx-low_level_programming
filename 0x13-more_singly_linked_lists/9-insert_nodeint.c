@@ -1,140 +1,49 @@
+#include <stdlib.h>
+#include <stdio.h>
 #include "lists.h"
-<<<<<<< HEAD
-
-
-
 /**
-
- * insert_nodeint_at_index - insert a node in a given position.
-
- * @head: data type pointer the head/next node
-
- * @idx: data type unsigned int index
-
- * @n: data type int
-
- * Return: new_node
-
+ * insert_nodeint_at_index - function that inserts a new node at given position
+ * @head: head of the node
+ * @index: index where to place node
+ * @n: data for the node
+ * Return: the address of new node
  */
 
-listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
-
+listint_t *insert_nodeint_at_index(listint_t **head, unsigned int index, int n)
 {
+	listint_t *new_node;
+	listint_t *temp;
+	unsigned int i;
 
-	listint_t *tmp_node, *new_node;
-
-	unsigned int counter = 0;
-
-
-
-	if (head == NULL && *head == NULL)
-
+	new_node = malloc(sizeof(listint_t));
+	if (new_node == NULL)
 		return (NULL);
-
-
-
-	tmp_node = *head;
-
-	if (idx == 0)
-
+	new_node->n = n;
+	new_node->next = NULL;
+	temp = *head;
+	i = 0;
+	if (*head == NULL && index > 0)
 	{
-
-		new_node = malloc(sizeof(listint_t));
-
-
-
-		if (new_node == 0)
-
-			return (NULL);
-
-=======
-/**
- * insert_nodeint_at_index - insert a node in a given position.
- * @head: data type pointer the head/next node
- * @idx: data type unsigned int index
- * @n: data type int
- * Return: new_node
- */
-
-listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
-{
-	listint_t *tmp_node, *new_node;
-	unsigned int counter = 0;
-
-	if (head == NULL && *head == NULL)
+		free(new_node);
 		return (NULL);
-	tmp_node = *head;
-	if (idx == 0)
+	}
+	if (index == 0)
 	{
-		new_node = malloc(sizeof(listint_t));
-
-		if (new_node == 0)
-			return (NULL);
->>>>>>> 508a638612b6975cac7099369f6c8a3ff42b7f8f
-		new_node->n = n;
-
-		new_node->next = tmp_node;
-
+		new_node->next = *head;
 		*head = new_node;
-<<<<<<< HEAD
-
-		return (new_node);
-
-	}
-
-	while (tmp_node)
-
-	{
-
-		if (counter + 1 == idx)
-
-		{
-
-			new_node = malloc(sizeof(listint_t));
-
-
-
-			if (new_node == 0)
-
-				return (NULL);
-
-=======
 		return (new_node);
 	}
-	while (tmp_node)
+	while (i < index - 1)
 	{
-		if (counter + 1 == idx)
+		temp = temp->next;
+		if (temp == NULL && index - i > 0)
 		{
-			new_node = malloc(sizeof(listint_t));
-
-			if (new_node == 0)
-				return (NULL);
->>>>>>> 508a638612b6975cac7099369f6c8a3ff42b7f8f
-			new_node->n = n;
-
-			new_node->next = tmp_node->next;
-
-			tmp_node->next = new_node;
-
-			return (new_node);
-<<<<<<< HEAD
-
+			free(new_node);
+			return (NULL);
 		}
-
-		tmp_node = tmp_node->next;
-
-		counter++;
-
+		i++;
 	}
-
-	return (NULL);
-
-=======
-		}
-		tmp_node = tmp_node->next;
-
-		counter++;
-	}
-	return (NULL);
->>>>>>> 508a638612b6975cac7099369f6c8a3ff42b7f8f
+	new_node->next = temp->next;
+	temp->next = new_node;
+	return (new_node);
 }

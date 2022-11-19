@@ -1,127 +1,43 @@
+
+#include <stdio.h>
 #include <stdlib.h>
-<<<<<<< HEAD
-
-#include <stdio.h>
-
 #include "lists.h"
 
-
-
 /**
-
-  * delete_nodeint_at_index - ...
-
-  * @head: ...
-
-  * @index: ...
-
-  *
-
-  * Return: ...
-
-  */
-
-int delete_nodeint_at_index(listint_t **head, unsigned int index)
-
-{
-
-=======
-#include <stdio.h>
-#include "lists.h"
-/**
-  * delete_nodeint_at_index - Delete a node at a given positiion.
-  * @head: First node address.
-  * @index: Position of the node to delete
-  *
-  * Return: If success (1).
-  */
+ * delete_nodeint_at_index - deletes the node at index
+ * @head: head of the linked list
+ * @index: index to delete
+ * Return: 1 if succeeded, -1 if failed
+ */
 
 int delete_nodeint_at_index(listint_t **head, unsigned int index)
 {
->>>>>>> 508a638612b6975cac7099369f6c8a3ff42b7f8f
-	unsigned int count = 1;
+	listint_t *temp;
+	listint_t *rmovenode;
+	unsigned int i;
 
-	listint_t *new = *head, *temp;
-
-<<<<<<< HEAD
-
-
-	if (!head || !*head)
-
-		return (-1);
-
-
-
-	if (index == 0)
-
-	{
-
-		*head = new->next;
-
-		free(new);
-
-		return (1);
-
-	}
-
-
-
+	i = 0;
 	temp = *head;
-
-	while (temp)
-
-	{
-
-		if (count == index)
-
-		{
-
-=======
-	if (!head || !*head)
+	if (*head == NULL)
 		return (-1);
 	if (index == 0)
 	{
-		*head = new->next;
-
-		free(new);
-		return (1);
+		*head = (*head)->next;
+		free(temp);
 	}
-	temp = *head;
-	while (temp)
+	else
 	{
-		if (count == index)
+		while (i < index - 1)
 		{
->>>>>>> 508a638612b6975cac7099369f6c8a3ff42b7f8f
-			new = temp->next;
-
-			temp->next = new->next;
-
-			free(new);
-<<<<<<< HEAD
-
-			return (1);
-
+			temp = temp->next;
+			if (temp == NULL)
+				return (-1);
+			i++;
 		}
-
-
-
-		temp = temp->next;
-
-		count++;
-
+		rmovenode = temp;
+		rmovenode = rmovenode->next;
+		temp->next = rmovenode->next;
+		free(rmovenode);
 	}
-
-
-
-	return (-1);
-
-=======
-			return (1);
-		}
-		temp = temp->next;
-
-		count++;
-	}
-	return (-1);
->>>>>>> 508a638612b6975cac7099369f6c8a3ff42b7f8f
+	return (1);
 }
